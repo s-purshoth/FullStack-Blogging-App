@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-
+- main
 
 pool:
   vmImage: ubuntu-latest
@@ -34,5 +34,7 @@ steps:
 
 - task: Docker@2
   inputs:
+    containerRegistry: 'ACR-Blogging'
+    repository: 'Blogging'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
